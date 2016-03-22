@@ -3,21 +3,20 @@ Created on Mar 21, 2016
 
 @author: arunbhargava
 '''
-import logging;
+import logging
 
-class MyClass(object):
-    '''
-    classdocs
-    '''
-    data = None 
+LOG_FILENAME = 'example.log'
+logging.basicConfig(filename=LOG_FILENAME,level=logging.DEBUG)
+logger = logging.getLogger(__name__)
 
+class MyClass():
+    data = None
     def __init__(self, data):
-        '''
-        Constructor
-        '''
         self.data   = data
-        logger = logging.getLogger(__name__)
-        logger.debug()
+
+if __name__ == "__main__":
+    a = MyClass("Data")
+    logger.info("This is message")
     
-    
+
         
